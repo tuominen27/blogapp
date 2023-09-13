@@ -6,8 +6,15 @@
         </title>
     </head>
     <body>
-        <header><a href="/">New blogs by Antti</a></header>
-        <p>Hi there!</p>
-        <p>It works!</p>
-</body>
+        <header>
+            <h1><a href="/">New blogs by Antti</a></h1>
+        </header>
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
+    </body>
 </html>
